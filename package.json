@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean" : "rimraf dist",
-    "transpile" : "babel ./src --out-dir dist --copy-files",
+    "clean": "rimraf dist",
+    "transpile": "babel ./src --out-dir dist --copy-files",
     "build": "npm-run-all clean transpile",
     "server": "node ./dist/main.js",
-    "prod": "SET NODE_ENV=production && npm-run-all build server",
-    "dev": "SET NODE_ENV=development && npm-run-all build server",
+    "prod": "NODE_ENV=production && npm-run-all build server",
+    "dev": "NODE_ENV=development && npm-run-all build server",
     "watch:dev": "nodemon",
     "start": "npm run prod"
   },
