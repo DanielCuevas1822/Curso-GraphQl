@@ -17,6 +17,12 @@ const Query = {
     }
     return db.authors.filter((author) => author.id === id);
   },
+  book: (parent, { id }, { db }, info) => {
+    if (!id) {
+      return db.books;
+    }
+    return db.books.filter((book) => book.id === id);
+  },
 };
 
 export default Query;
